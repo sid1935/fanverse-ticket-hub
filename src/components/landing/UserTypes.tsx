@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -18,7 +17,7 @@ export const UserTypes = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card id="for-fans" className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm border-blue-500/20 p-8 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300">
             <div className="text-4xl mb-4">🎵</div>
-            <h3 className="text-2xl font-bold text-white mb-4">For Fans</h3>
+            <h3 className="text-2xl font-bold text-black mb-4">For Fans</h3>
             <ul className="space-y-3 text-black mb-6 bg-white/90 p-4 rounded-lg">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
@@ -44,7 +43,7 @@ export const UserTypes = () => {
 
           <Card id="for-organizers" className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border-green-500/20 p-8 hover:from-green-500/20 hover:to-emerald-500/20 transition-all duration-300">
             <div className="text-4xl mb-4">🎪</div>
-            <h3 className="text-2xl font-bold text-white mb-4">For Organizers</h3>
+            <h3 className="text-2xl font-bold text-black mb-4">For Organizers</h3>
             <ul className="space-y-3 text-black mb-6 bg-white/90 p-4 rounded-lg">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>

@@ -13,7 +13,7 @@ export const Hero = () => {
             <img 
               src="/lovable-uploads/4d06c6a1-82fc-4fbc-b781-6c35bcf89ec8.png" 
               alt="ReXDeX Logo" 
-              className="h-24 w-auto mx-auto mb-6"
+              className="h-48 w-auto mx-auto mb-6"
             />
           </div>
           
