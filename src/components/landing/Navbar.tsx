@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Wallet, Users } from "lucide-react";
 
@@ -6,11 +5,12 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">RX</span>
-          </div>
-          <span className="text-white font-bold text-xl">ReXDeX</span>
+        <div className="flex items-center space-x-3">
+          <img 
+            src="/lovable-uploads/4d06c6a1-82fc-4fbc-b781-6c35bcf89ec8.png" 
+            alt="ReXDeX Logo" 
+            className="h-8 w-auto"
+          />
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
