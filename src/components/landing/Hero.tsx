@@ -9,6 +9,14 @@ export const Hero = () => {
       
       <div className="container mx-auto px-4 text-center z-10">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/4d06c6a1-82fc-4fbc-b781-6c35bcf89ec8.png" 
+              alt="ReXDeX Logo" 
+              className="h-24 w-auto mx-auto mb-6"
+            />
+          </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             The Future of
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -23,10 +31,10 @@ export const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-lg px-8 py-4">
-              Start as a Fan
+              <a href="#fan-signup">Start as a Fan</a>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-4">
-              Join as Organizer
+            <Button size="lg" variant="outline" className="border-white/20 text-black bg-white hover:bg-gray-100 text-lg px-8 py-4">
+              <a href="#organizer-signup">Join as Organizer</a>
             </Button>
           </div>
 
