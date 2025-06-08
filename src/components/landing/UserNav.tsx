@@ -2,11 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { User, LogOut } from "lucide-react";
+import { User, LogOut, LayoutDashboard } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const UserNav = () => {
   const { user, signOut } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
     const { error } = await signOut();
@@ -39,6 +41,15 @@ export const UserNav = () => {
 
   return (
     <div className="flex items-center space-x-4">
+      <Button 
+        variant="ghost" 
+        size="sm" 
+        onClick={() => navigate('/dashboard')}
+        className="text-gray-300 hover:text-white"
+      >
+        <LayoutDashboard className="w-4 h-4 mr-2" />
+        Dashboard
+      </Button>
       <div className="flex items-center space-x-2 text-gray-300">
         <User className="w-4 h-4" />
         <span className="text-sm">{user.email}</span>
