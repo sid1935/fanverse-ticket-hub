@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,16 +5,23 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Calendar, MapPin, Users, DollarSign, Edit, Trash2 } from "lucide-react";
+import { Json } from "@/integrations/supabase/types";
+
+interface TicketTier {
+  tier: string;
+  price: number;
+  quantity: number;
+}
 
 interface Event {
   id: string;
   title: string;
-  description: string;
+  description: string | null;
   venue: string;
   start_time: string;
   end_time: string;
-  image_url: string;
-  ticket_tiers: any[];
+  image_url: string | null;
+  ticket_tiers: Json;
   created_at: string;
 }
 
@@ -100,13 +106,14 @@ export const EventsList = () => {
     });
   };
 
-  const getTotalTickets = (ticketTiers: any[]) => {
-    return ticketTiers.reduce((total, tier) => total + (tier.quantity || 0), 0);
+  const getTotalTickets = (ticketTiers: Json) => {
+    if (!Array.isArray(ticketTiers)) return 0;
+    return (ticketTiers as TicketTier[]).reduce((total, tier) => total + (tier.quantity || 0), 0);
   };
 
-  const getLowestPrice = (ticketTiers: any[]) => {
-    if (!ticketTiers.length) return 0;
-    return Math.min(...ticketTiers.map(tier => tier.price || 0));
+  const getLowestPrice = (ticketTiers: Json) => {
+    if (!Array.isArray(ticketTiers) || ticketTiers.length === 0) return 0;
+    return Math.min(...(ticketTiers as TicketTier[]).map(tier => tier.price || 0));
   };
 
   if (loading) {
@@ -165,7 +172,7 @@ export const EventsList = () => {
                   <Users className="w-4 h-4 mr-2" />
                   {getTotalTickets(event.ticket_tiers)} tickets available
                 </div>
-                {event.ticket_tiers.length > 0 && (
+                {Array.isArray(event.ticket_tiers) && event.ticket_tiers.length > 0 && (
                   <div className="flex items-center text-gray-300 text-sm">
                     <DollarSign className="w-4 h-4 mr-2" />
                     From ${getLowestPrice(event.ticket_tiers)}
