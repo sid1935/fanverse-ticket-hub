@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -108,12 +109,12 @@ export const EventsList = () => {
 
   const getTotalTickets = (ticketTiers: Json) => {
     if (!Array.isArray(ticketTiers)) return 0;
-    return (ticketTiers as TicketTier[]).reduce((total, tier) => total + (tier.quantity || 0), 0);
+    return (ticketTiers as unknown as TicketTier[]).reduce((total, tier) => total + (tier.quantity || 0), 0);
   };
 
   const getLowestPrice = (ticketTiers: Json) => {
     if (!Array.isArray(ticketTiers) || ticketTiers.length === 0) return 0;
-    return Math.min(...(ticketTiers as TicketTier[]).map(tier => tier.price || 0));
+    return Math.min(...(ticketTiers as unknown as TicketTier[]).map(tier => tier.price || 0));
   };
 
   if (loading) {
