@@ -9,6 +9,7 @@ import { AuthGuard } from "@/components/AuthGuard";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import EventDetails from "./pages/EventDetails";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,14 @@ const App = () => (
               element={
                 <AuthGuard>
                   <Dashboard />
+                </AuthGuard>
+              } 
+            />
+            <Route 
+              path="/event/:id" 
+              element={
+                <AuthGuard>
+                  <EventDetails />
                 </AuthGuard>
               } 
             />
