@@ -26,8 +26,10 @@ const Auth = () => {
 
     try {
       if (isLogin) {
+        console.log("Attempting login for:", email);
         const { error } = await signIn(email, password);
         if (error) {
+          console.error("Login error:", error);
           toast({
             title: "Login failed",
             description: error.message,
@@ -41,11 +43,13 @@ const Auth = () => {
           navigate("/");
         }
       } else {
+        console.log("Attempting signup for:", email, "with role:", role);
         const { error } = await signUp(email, password, {
           name,
           role
         });
         if (error) {
+          console.error("Signup error:", error);
           toast({
             title: "Sign up failed",
             description: error.message,
@@ -56,8 +60,16 @@ const Auth = () => {
             title: "Account created!",
             description: "Please check your email to verify your account."
           });
+          // Don't navigate immediately for signup since email verification is needed
         }
       }
+    } catch (err) {
+      console.error("Auth error:", err);
+      toast({
+        title: "Authentication error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive"
+      });
     } finally {
       setLoading(false);
     }
@@ -147,6 +159,7 @@ const Auth = () => {
               className="bg-white/10 border-white/20 text-white"
               placeholder="••••••••"
               required
+              minLength={6}
             />
           </div>
 
