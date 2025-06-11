@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 animate-pulse"></div>
@@ -30,11 +33,20 @@ export const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-lg px-8 py-4">
-              <a href="#fan-signup">Start as a Fan</a>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-lg px-8 py-4"
+              onClick={() => navigate("/waitlist?type=fan")}
+            >
+              Start as a Fan
             </Button>
-            <Button size="lg" variant="outline" className="border-white/20 text-black bg-white hover:bg-gray-100 text-lg px-8 py-4">
-              <a href="#organizer-signup">Join as Organizer</a>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white/20 text-black bg-white hover:bg-gray-100 text-lg px-8 py-4"
+              onClick={() => navigate("/waitlist?type=organizer")}
+            >
+              Join as Organizer
             </Button>
           </div>
 

@@ -6,8 +6,6 @@ import { UserTypes } from "@/components/landing/UserTypes";
 import { Team } from "@/components/landing/Team";
 import { Footer } from "@/components/landing/Footer";
 import { Navbar } from "@/components/landing/Navbar";
-import { FanSignup } from "@/components/signup/FanSignup";
-import { OrganizerSignup } from "@/components/signup/OrganizerSignup";
 
 const Index = () => {
   return (
@@ -18,8 +16,6 @@ const Index = () => {
       <HowItWorks />
       <UserTypes />
       <Team />
-      <FanSignup />
-      <OrganizerSignup />
       <Footer />
     </div>
   );
