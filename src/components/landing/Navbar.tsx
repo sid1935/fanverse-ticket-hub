@@ -12,6 +12,7 @@ export const Navbar = () => {
           <a href="#for-fans" className="text-gray-300 hover:text-white transition-colors">For Fans</a>
           <a href="#for-organizers" className="text-gray-300 hover:text-white transition-colors">For Organizers</a>
           <a href="#team" className="text-gray-300 hover:text-white transition-colors">Team</a>
+          <a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
         </div>
         <UserNav />
       </div>

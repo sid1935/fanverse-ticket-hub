@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { useEmailNotification } from "@/hooks/useEmailNotification";
 import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistPageProps {
@@ -19,6 +20,7 @@ const Waitlist = () => {
   const [loading, setLoading] = useState(false);
   
   const { toast } = useToast();
+  const { sendWelcomeEmail } = useEmailNotification();
   const navigate = useNavigate();
 
   // Get user type from URL params
@@ -55,6 +57,9 @@ const Waitlist = () => {
           });
         }
       } else {
+        // Send welcome email
+        await sendWelcomeEmail(email, name, typeFromUrl || userType);
+        
         toast({
           title: "Success!",
           description: "You've been added to our waitlist. We'll be in touch soon!"
