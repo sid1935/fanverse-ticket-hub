@@ -1,3 +1,4 @@
+
 # To better understand this file read this:
 # https://docs.ionos.space/docs/github-actions-customization/
 
@@ -14,7 +15,7 @@ on:
         type: string
 
 env:
-  DEPLOYMENT_FOLDER: public
+  DEPLOYMENT_FOLDER: dist
 
 jobs:
 # Please do not rename this job
