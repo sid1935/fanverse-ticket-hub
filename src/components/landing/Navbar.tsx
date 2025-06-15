@@ -9,8 +9,8 @@ export const Navbar = () => {
         <div className="flex items-center space-x-8">
           <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
           <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
-          <a href="#for-fans" className="text-gray-300 hover:text-white transition-colors">For Fans</a>
-          <a href="#for-organizers" className="text-gray-300 hover:text-white transition-colors">For Organizers</a>
+          <a href="/fan-journey" className="text-gray-300 hover:text-white transition-colors">For Fans</a>
+          <a href="/organizer-journey" className="text-gray-300 hover:text-white transition-colors">For Organizers</a>
           <a href="#team" className="text-gray-300 hover:text-white transition-colors">Team</a>
           <a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
         </div>

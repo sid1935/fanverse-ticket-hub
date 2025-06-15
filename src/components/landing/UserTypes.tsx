@@ -40,12 +40,21 @@ export const UserTypes = () => {
                 Trade tickets safely on our P2P exchange
               </li>
             </ul>
-            <Button 
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-              onClick={() => navigate("/waitlist?type=fan")}
-            >
-              Join as Fan
-            </Button>
+            <div className="flex gap-3">
+              <Button 
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                onClick={() => navigate("/waitlist?type=fan")}
+              >
+                Join as Fan
+              </Button>
+              <Button 
+                variant="outline"
+                className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+                onClick={() => navigate("/fan-journey")}
+              >
+                See Journey
+              </Button>
+            </div>
           </Card>
 
           <Card className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border-green-500/20 p-8 hover:from-green-500/20 hover:to-emerald-500/20 transition-all duration-300">
@@ -69,12 +78,21 @@ export const UserTypes = () => {
                 Eliminate scalping with AI bot detection
               </li>
             </ul>
-            <Button 
-              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
-              onClick={() => navigate("/waitlist?type=organizer")}
-            >
-              Become Organizer
-            </Button>
+            <div className="flex gap-3">
+              <Button 
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                onClick={() => navigate("/waitlist?type=organizer")}
+              >
+                Become Organizer
+              </Button>
+              <Button 
+                variant="outline"
+                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-white"
+                onClick={() => navigate("/organizer-journey")}
+              >
+                See Journey
+              </Button>
+            </div>
           </Card>
         </div>
       </div>
