@@ -1,40 +1,6 @@
+install:
+  command: bun install
 
-# Ionos Deploy Now configuration for fanverse-ticket-hub
-# This file configures the deployment settings for your static site
-
-version: 1
-
-# Static site configuration
-site:
-  type: static
-  buildCommand: npm run build
-  distDir: dist
-  nodeVersion: 18
-
-# Environment configuration
-env:
-  - name: NODE_ENV
-    value: production
-
-# Headers configuration for better performance and security
-headers:
-  - source: "**/*"
-    headers:
-      - key: X-Frame-Options
-        value: DENY
-      - key: X-Content-Type-Options
-        value: nosniff
-      - key: Referrer-Policy
-        value: strict-origin-when-cross-origin
-
-  # Cache static assets for better performance
-  - source: "**/*.{js,css,png,jpg,jpeg,gif,svg,ico,woff,woff2}"
-    headers:
-      - key: Cache-Control
-        value: public, max-age=31536000, immutable
-
-# Redirects for SPA routing
-redirects:
-  - source: "/**"
-    destination: "/index.html"
-    type: 404
+build:
+  command: bun run build
+  output: dist
